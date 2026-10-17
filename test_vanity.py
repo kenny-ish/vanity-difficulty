@@ -23,6 +23,10 @@ class VanityTest(unittest.TestCase):
         d = 16 ** 6
         self.assertAlmostEqual(keys_for(0.5, d) / d, math.log(2), places=4)
 
+    def test_large_d_uses_stable_log(self):
+        d = 16 ** 14
+        self.assertAlmostEqual(keys_for(0.5, d) / d, math.log(2), places=12)
+
 
 if __name__ == "__main__":
     unittest.main()
