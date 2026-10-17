@@ -30,7 +30,7 @@ def difficulty(pattern: str, case_sensitive: bool = False) -> tuple[str, int]:
 def keys_for(prob: float, d: int) -> float:
     if d == 1:
         return 1
-    return math.log(1 - prob) / math.log(1 - 1 / d)
+    return math.log(1 - prob) / math.log1p(-1 / d)
 
 
 def fmt_time(secs: float) -> str:
